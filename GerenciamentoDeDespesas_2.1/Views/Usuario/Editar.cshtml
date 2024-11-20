@@ -1,0 +1,66 @@
+﻿@using GerenciamentoDeDespesas_2._1.Enum
+@model Usuarios
+
+@{
+    ViewData["title"] = "Editar de Usuários";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/formularioUsuarios.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<main class="Main">
+    <div class="card-corpo">
+        <h1>Atualização de Usuários</h1>
+    </div>
+
+    <form asp-controller="Usuario" asp-action="Editar" method="post" autocomplete="off">
+        @* caminho para onde o formulario deve ir *@
+
+        <input type="hidden" asp-for="UserId" />
+
+        <form>
+            <div class="form-group">
+                <label for="nome"><i class="bi bi-person-badge-fill"></i></label>
+                <input type="text" asp-for="Nome" id="nome" name="nome" placeholder="Digite seu nome completo">
+                <span class="text-danger" asp-validation-for="Nome"></span>
+            </div>
+            <div class="form-group">
+                <label for="username"><i class="bi bi-person-fill"></i></label>
+                <input type="text" asp-for="UserName" id="username" name="username" placeholder="Digite um usuário">
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+            <div class="form-group">
+                <label for="nome"><i class="bi bi-person-badge-fill"></i>Perfil</i></label>
+                <span class="text-danger" asp-validation-for="Perfil"></span>
+                <select asp-for="Perfil" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="@PerfilEnum.Admin">Administrador</option>
+                    <option value="@PerfilEnum.Padrao">Padrão</option>
+                    <span class="text-danger" asp-validation-for="Perfil"></span>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="bi bi-envelope-at-fill"></i></label>
+                <input type="text" asp-for="Email" id="email" name="email" placeholder="Digite seu email">
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+            <div class="button-group">
+                <button class="btn">
+                    <a class="link-voltar" type="button" asp-controller="Usuario" asp-action="Index"><i class="bi bi-back mx-2"></i>Voltar</a>
+                </button>
+                <button type="submit" class="btn"><i class="bi bi-box-arrow-in-up mx-2"></i>Editar</button>
+            </div>
+        </form>
+    </form>
+</main>
+
+<script src="/js/site.js" asp-append-version="true"></script>
+
+
+

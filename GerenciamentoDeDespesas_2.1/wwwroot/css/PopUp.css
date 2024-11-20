@@ -1,0 +1,73 @@
+﻿
+ /*CSS mensagens de erro, Sucesso e Alerta.*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-message {
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.success {
+    background-color: #17db7e;
+    color: black;
+    padding: 10%;
+}
+
+.error {
+    background-color: #d10000;
+    color: black;
+    padding: 10%;
+}
+
+.alert {
+    background-color: #d5c62f;
+    color: black;
+    padding: 10%;
+}
+
+.close-btn {
+/*    position: absolute;*/
+    top: 12px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: black;
+}
+
+    .close-btn:hover {
+        color: #000;
+    }
+
+
+#modalDespesaUsuario {
+    height: 70vh; /* 100% da altura da tela */
+    width: 100%; /* 100% da largura da tela */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    right: 0; /* Posiciona à direita */
+    bottom: 0; /* Posiciona na parte inferior */
+}

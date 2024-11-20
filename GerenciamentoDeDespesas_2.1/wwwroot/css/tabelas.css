@@ -1,0 +1,31 @@
+﻿
+/*CSS Tabelas Despesas*/
+
+.modern-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .modern-table th, .modern-table td {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        background: #fff;
+        text-align: left;
+    }
+
+    .modern-table th {
+        background-color: #0E6CB8;
+        color: white;
+        font-weight: bold;
+        text-align: inherit;
+    }
+
+    .modern-table tr:hover td {
+        background-color: #f5f5f5;
+    }
+

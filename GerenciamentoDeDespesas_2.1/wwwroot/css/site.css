@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*Layout principal.*/
+
+body {
+    background-color: #DBDBE1;
+    height: 100%;
+}
+
+.Header {
+    grid-column: span 4 / span 4;
+}
+
+.Main {
+    grid-column: span 4 / span 4;
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    max-width: 1400px;
+    margin-top: 10px;
+}
+
+
+
+hr {
+    color: white;
+}
+
+
+
+
+/*Views.*/
+
+.card-corpo {
+    display: grid;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    grid-template-columns: 4fr 1fr;
+    margin-bottom: 3%;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    justify-self: baseline;
+}
+
+h3, h6 {
+    justify-self: baseline;
+}
+
+.btn-cadastro {
+    background-color: #086EBA;
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Fonte em negrito */
+    border: none; /* Remove bordas */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o cursor de mão */
+    white-space: nowrap; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Suaviza o efeito ao passar o mouse */
+}
+
+    .btn-cadastro:hover {
+        background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve ao passar o mouse */
+    }
+
+    .btn-cadastro:active {
+        background-color: #388E3C; /* Cor ainda mais escura ao clicar */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reduzida ao clicar */
+        transform: scale(0.98); /* Efeito de clique */
+    }
+
+    .btn-cadastro:disabled {
+        background-color: #cccccc; /* Cor cinza para botão desabilitado */
+        cursor: not-allowed; /* Cursor de não permitido */
+    }
+
+
+.sair {
+    list-style-type: none; /* Remove os marcadores */
+    padding: 0; /* Remove o espaçamento interno padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+img {
+    align-items:center;
+}

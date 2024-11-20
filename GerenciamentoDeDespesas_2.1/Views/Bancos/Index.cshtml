@@ -1,0 +1,192 @@
+﻿@model ViewModel
+
+@section Styles {
+    <link rel="stylesheet" href="/css/tabelas.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/PopUp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/ViewBancos.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+}
+
+@if (TempData["SuccessMessage"] != null || TempData["ErrorMessage"] != null || TempData["WarningMessage"] != null)
+{
+    <div class="modal-overlay" id="messageModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="modal-message success">
+                    <i class="bi bi-check-circle" style="color: black; mx-2"></i>
+
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="modal-message error">
+                    <i class="bi bi-x-circle" style="color: black; mx-2"></i>
+
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            @if (TempData["WarningMessage"] != null)
+            {
+                <div class="modal-message alert">
+                    <i class="bi bi-exclamation-circle" style="color: black; mx-2"></i>
+
+                    @TempData["WarningMessage"]
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<div class="card-corpo">
+    <h1>Bancos</h1>
+    <button id="btn-imprimir" type="button" class="btn btn-primary"><i class="bi bi-printer-fill mx-2"></i>Imprimir</button>
+</div>
+
+<div class="card">
+    <h2>Conta Bancaria</h2>
+    <form class="row g-3 needs-validation" asp-controller="Bancos" asp-action="Deposito" novalidate>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="Nome" asp-for="contas.Nome" required>
+            <div class="valid-tooltip">
+                Aceitavel!
+            </div>
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label">Sobremone</label>
+            <input type="text" class="form-control" id="Sobrenome" asp-for="contas.Sobrenome" required>
+            <div class="valid-tooltip">
+                Aceitavel!
+            </div>
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltipUsername" class="form-label">Email</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="bi bi-envelope-at"></i></span>
+                <input type="text" class="form-control" id="Email" asp-for="contas.Email"  aria-describedby="validationTooltipUsernamePrepend" required>
+                <div class="invalid-tooltip">
+                    Por favor digite um Email valido.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="validationTooltip03" class="form-label">Observação</label>
+            <input type="text" class="form-control" id="Observacao" asp-for="contas.Observacao" >
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip04" class="form-label">Banco</label>
+            <select id="banco" name="banco" class="form-control">
+                <option value="">Selecione...</option>
+                <option value="Caixa">Caixa</option>
+                <option value="Bradesco">Bradesco</option>
+                <option value="Santader">Santander</option>
+                @* @foreach (var banco in Model.Bancos)
+                {
+                    <option value="@(link unavailable)">@banco.Nome</option>
+                } *@
+            </select>
+
+            <div class="invalid-tooltip">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-novo-banco">
+                    <i class="fas fa-plus"></i> Novo banco
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltip05" class="form-label">Valor</label>
+            <input type="text" class="form-control" id="Valor" asp-for="contas.Deposito" required>
+            <div class="invalid-tooltip">
+                Valor invalido!
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit"><i class="bi bi-cash-coin mx-2"></i>Depositar</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+<div class="overflow-auto mt-5" style="max-height: 650px;">
+    <table class="modern-table" id="TDespesas">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Observações</th>
+                <th scope="col">Banco</th>
+                <th scope="col">Deposito</th>
+                <th scope="col">Saque</th>
+                <th scope="col">Data da Movimentação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lucas</td>
+                <td>Silva</td>
+                <td>Deposito para pagamento de dividas.</td>
+                <td>Bradesco</td>
+                <td>1500,00</td>
+                <td>500,00</td>
+                <td>20/10/2024</td>
+            </tr>
+            <tr>
+                <td>Lucas</td>
+                <td>Silva</td>
+                <td>Deposito para pagamento de dividas.</td>
+                <td>Bradesco</td>
+                <td>1500,00</td>
+                <td>500,00</td>
+                <td>20/10/2024</td>
+            </tr>
+            <tr>
+                <td>Lucas</td>
+                <td>Silva</td>
+                <td>Deposito para pagamento de dividas.</td>
+                <td>Bradesco</td>
+                <td>1500,00</td>
+                <td>500,00</td>
+                <td>20/10/2024</td>
+            </tr>
+            <tr>
+                <td>Lucas</td>
+                <td>Silva</td>
+                <td>Deposito para pagamento de dividas.</td>
+                <td>Bradesco</td>
+                <td>1500,00</td>
+                <td>500,00</td>
+                <td>20/10/2024</td>
+            </tr>
+          @*   @if (Model != null)
+            {
+               @*  @foreach (var conta in Model.Contas)
+                {
+                    <tr>
+                        <td>@conta.Nome</td>
+                        <td>@conta.Sobrenome</td>
+                        <td>@conta.Observacao</td>
+                        <td>@conta.Banco</td>
+                        <td>@conta.Deposito</td>
+                        <td>@conta.Saque</td>
+                        <td>
+                            @conta.Data.ToString("yyyy-MM-dd")
+                        </td>
+                    </tr> 
+                }
+            } *@
+
+        </tbody>
+    </table>
+</div>
+
+
+<script src="/js/Despesas.js" asp-append-version="true"></script>
+<script src="/js/site.js" asp-append-version="true"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

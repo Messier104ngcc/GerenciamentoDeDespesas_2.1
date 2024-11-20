@@ -1,0 +1,106 @@
+﻿
+
+/*Formulario cadastro de usuarios.*/
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: red;
+        outline: none;
+    }
+
+.text-danger {
+    color: red;
+    font-size: 0.9em;
+}
+
+.button-group {
+    display: flex;
+    gap: 5%;
+}
+
+.btn {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
+
+.link-voltar {
+    text-decoration: none;
+    color: white;
+}
+
+.card-corpo {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+}
+
+h4 {
+    margin: 0; /* Remove margens padrão do h4 */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.text-danger {
+    color: red;
+    border-color: #ffeeba;
+    font-size: 10px;
+    padding: 0px;
+}
+
+.password-container {
+    position: relative;
+    display: inline-block;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none; /* Evita seleção de texto ao clicar no ícone */
+}

@@ -1,0 +1,42 @@
+﻿
+@model List<Despesas>
+
+<table class="modern-table" id="TDespesas" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">Paga</th>
+            <th scope="col">Despesa</th>
+            <th scope="col">Observações</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Vencimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var despesa in Model)
+            {
+                <tr>
+                    <td>
+                        @if (despesa.Paga == "Sim")
+                        {
+                            <i class="bi bi-check-circle-fill text-success mx-2">Sim</i>
+                        }
+                        else
+                        {
+                            @despesa.Paga
+                        }
+
+                    </td>
+                    <td>@despesa.Despesa</td>
+                    <td>@despesa.Observacao</td>
+                    <td>@despesa.Valor</td>
+                    <td>
+                        @despesa.Vencimento.ToString("yyyy-MM-dd")
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

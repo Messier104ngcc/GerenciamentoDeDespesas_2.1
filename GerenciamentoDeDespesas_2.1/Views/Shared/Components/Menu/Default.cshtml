@@ -1,0 +1,50 @@
+﻿
+@model Usuarios
+
+<header class="Header">
+
+</header>
+
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house mx-2"></i>Pagina inicial</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-area="" asp-controller="Despesas" asp-action="Index"><i class="bi bi-person-vcard-fill mx-2"></i>Despesas</a>
+        </li>
+
+        @if (Model.Perfil == GerenciamentoDeDespesas_2._1.Enum.PerfilEnum.Admin)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Index"><i class="bi bi-person-fill-gear m-2"></i>Usuários</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" asp-area="" asp-controller="AlterarSenha" asp-action="Index"><i class="bi bi-key-fill m-2"></i>Alterar Senha</a>
+            </li>
+        }
+
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-controller="Bancos" asp-action="Index"><i class="bi bi-bank2 m-2"></i>Bancos</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-controller="Agendamento" asp-action="Index"><i class="bi bi-calendar-check-fill m-2"></i>Agendamento</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-controller="Login" asp-action="Sair"><i class="bi bi-box-arrow-right mx-2"></i>Sair</a>
+        </li>
+    </ul>
+</div>
+<hr />
+<div class="dropdown">
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-center text-white text-decoration-none" aria-expanded="false">
+        <img src="https://avatars.githubusercontent.com/u/115052169?v=4" alt="" width="32" height="32" class="rounded-circle me-2">
+        <h6>Olá ,@Model.Nome</h6>
+    </a>
+</div>
+
+<script src="~/js/sidebars.js" asp-append-version="true"></script>

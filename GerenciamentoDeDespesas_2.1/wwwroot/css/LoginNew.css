@@ -1,0 +1,229 @@
+﻿
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F0F0F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 5%;
+}
+
+#logo {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    /*width: 100%;*/ /* Mantém a largura em 100% do elemento pai */
+    max-width: 1400px; /* Aumenta o max-width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /*background-color: #2D2D3E;*/
+    padding: 20px; /* Adiciona um padding interno */
+    margin: 0 auto; /* Centraliza o container */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura total */
+}
+
+
+.left-panel {
+    background-color: #2D2D3E;
+    color: white;
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .left-panel .logo {
+        text-align: center;
+        padding-top: 3%;
+    }
+
+        .left-panel .logo h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .left-panel .logo h2 {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+.social-icons {
+    display: flex;
+    padding-left: 1%;
+}
+
+    .social-icons a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .social-icons img {
+        width: 40px;
+        height: 100%;
+    }
+
+.right-panel {
+    width: 60%;
+    padding: 40px;
+    padding-bottom: 10%;
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+}
+
+.user-icon {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+.forgot-password {
+    display: block;
+    margin-bottom: 50px;
+    text-align: right;
+    font-size: 12px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+    .forgot-password > a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-cadastrar {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    display:flex;
+    justify-content:center;
+}
+
+    .btn-cadastrar > a {
+        color: white;
+        text-decoration: none;
+    }
+
+.btn {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    .btn > a {
+        color: white;
+        text-decoration: none;
+    }
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1%;
+    background-color: #F7F7F7;
+    width: 20%;
+}
+
+    footer p {
+        font-size: 14px;
+    }
+
+
+
+.forgot-support {
+    scroll-padding-top: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+    .forgot-support > img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .forgot-support > a {
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #007BFF;
+    }
+
+
+.text-danger {
+    color: red;
+    border-color: #ffeeba;
+    font-size: 10px;
+    padding: 0px;
+}
+
+
+#imglogo {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10%;
+}
+

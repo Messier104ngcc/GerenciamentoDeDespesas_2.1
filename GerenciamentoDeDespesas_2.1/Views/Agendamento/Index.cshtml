@@ -1,0 +1,91 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="/css/formularioDespesas.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/PopUp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/Agendamento.css" asp-append-version="true" />
+}
+
+
+<div class="container">
+    <div class="card-corpo">
+        <h1>Agenda</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-wrapper1">
+                    <h2 class="text-nowrap"><i class="bi bi-tag-fill mx-2"></i>Adicionar Lembrete</h2>
+                    <form>
+                        <label for="nome-lembrete">Nome do Lembrete</label>
+                        <input type="text" id="nome-lembrete" name="nome-lembrete">
+
+                        <label for="descricao-lembrete">Descrição (opcional)</label>
+                        <input type="text" id="descricao-lembrete" name="descricao-lembrete">
+
+                        <label for="data-lembrete">Data</label>
+                        <input type="date" id="data-lembrete" name="data-lembrete">
+
+                        <label for="horario-lembrete">Horário</label>
+                        <input type="time" id="horario-lembrete" name="horario-lembrete">
+
+                        <button class="btn btn-primary p-2 mt-2" type="submit">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col order-5">
+
+                <div class="card-form">
+                    <div id="container">
+						<div id="header">
+                            <div id="monthDisplay"></div>
+
+                            <div>
+                                <button class="btn btn-primary" id="backButton">Voltar</button>
+                                <button class="btn btn-primary" id="nextButton">Próximo</button>
+                            </div>
+
+                        </div>
+
+                        <div id="weekdays">
+                            <div>Domingo</div>
+                            <div>Segunda-feira</div>
+                            <div>Terça-feira</div>
+                            <div>Quarta-feira</div>
+                            <div>Quinta-feira</div>
+                            <div>Sexta-feira</div>
+                            <div>Sábado</div>
+                        </div>
+
+
+                        <!-- div dinamic -->
+                        <div id="calendar"></div>
+
+
+                    </div>
+
+                    <div id="newEventModal">
+                        <h2>New Evente</h2>
+
+                        <input id="eventTitleInput" placeholder="Event Title" />
+
+                        <button class="btn btn-primary" id="saveButton"> Salvar</button>
+                        <button class="btn btn-primary" id="cancelButton">Cancelar</button>
+                    </div>
+
+                    <div id="deleteEventModal">
+                        <h2>Evento</h2>
+
+                        <div id="eventText"></div>
+                        <br>
+                        <button id="deleteButton">Deletar</button>
+                        <button id="closeButton">Fechar</button>
+                    </div>
+                    <div id="modalBackDrop"></div>
+                </div>
+            </div>
+		</div>
+    </div>
+</div>
+
+<script src="/js/Agendamento.js"></script>

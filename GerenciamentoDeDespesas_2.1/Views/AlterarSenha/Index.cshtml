@@ -1,0 +1,96 @@
+﻿@using GerenciamentoDeDespesas_2._1.Enum
+@model AlterarSenhaModel
+
+@{
+    ViewData["title"] = "Atualização de senha dos Usuários";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/formularioUsuarios.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/PopUp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@if (TempData["SuccessMessage"] != null || TempData["ErrorMessage"] != null || TempData["WarningMessage"] != null)
+{
+    <div class="modal-overlay" id="messageModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="modal-message success">
+                    <i class="bi bi-check-circle" style="color: black; mx-2"></i>
+
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="modal-message error">
+                    <i class="bi bi-x-circle" style="color: black; mx-2"></i>
+
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            @if (TempData["WarningMessage"] != null)
+            {
+                <div class="modal-message alert">
+                    <i class="bi bi-exclamation-circle" style="color: black; mx-2"></i>
+
+                    @TempData["WarningMessage"]
+                </div>
+            }
+        </div>
+    </div>
+}
+
+
+<div class="card-corpo">
+    <h1>Atualização de Senha</h1>
+</div>
+<form asp-controller="AlterarSenha" asp-action="Alterar" method="post" autocomplete="off">
+
+    <div class="form-group">
+        <h6>Senha Atual</h6>
+        <label for="senha"><i class="bi bi-key-fill"></i></label>
+        <div class="password-container">
+            <input type="text" asp-for="SenhaAtual" id="senhaatual">
+        </div>
+        <span class="text-danger" asp-validation-for="SenhaAtual"></span>
+    </div>
+
+    <div class="form-group">
+        <h6>Nova Senha</h6>
+        <label for="confsenha"><i class="bi bi-key-fill"></i></label>
+        <div class="password-container">
+            <input type="text" id="currentPassword" asp-for="NovaSenha" id="novasenha">
+        </div>
+        <span class="text-danger" asp-validation-for="NovaSenha"></span>
+    </div>
+
+    <div class="form-group">
+        <h6>Confirmar Nova Senha</h6>
+        <label for="confsenha"><i class="bi bi-key-fill"></i></label>
+        <div class="password-container">
+            <input type="text" asp-for="ConfirmarNovaSenha" id="confirmanovasenha">
+        </div>
+        <span class="text-danger" asp-validation-for="ConfirmarNovaSenha"></span>
+    </div>
+    <div class="button-group">
+        <button class="btn">
+            <a class="link-voltar" type="button" asp-controller="Home" asp-action="Index"><i class="bi bi-back mx-2"></i>Voltar</a>
+        </button>
+        <button type="submit" class="btn"><i class="bi bi-box-arrow-in-up mx-2"></i>Atualizar</button>
+    </div>
+</form>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+

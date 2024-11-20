@@ -1,0 +1,21 @@
+﻿
+.card {
+    background-color: white;
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+    .card h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #555;
+        line-height: 1.6;
+    }

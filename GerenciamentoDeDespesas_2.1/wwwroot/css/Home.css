@@ -1,0 +1,135 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .header h1 {
+        color: #086EBA;
+        font-size: 2.5em;
+    }
+
+    .header p {
+        font-size: 1.1em;
+        color: #555;
+    }
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Resumo */
+.summary {
+    grid-column: span 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .summary h2 {
+        color: #086EBA;
+    }
+
+.summary-details {
+    display: flex;
+    gap: 15px;
+}
+
+.summary-card {
+    flex: 1;
+    text-align: center;
+    background-color: #e3f4e3;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+    .summary-card h3 {
+        color: #086EBA;
+        margin-top: 5px;
+    }
+
+/* Gráfico */
+.expense-chart {
+    max-width: 100%; /* Ou ajuste conforme necessário */
+    height: auto; /* Mantém a proporção */
+    margin: 0 auto; /* Centraliza o gráfico */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Despesas Recentes */
+.recent-expenses {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .recent-expenses table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .recent-expenses th, .recent-expenses td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .recent-expenses th {
+        background-color: #086EBA;
+        color: white;
+    }
+
+/* Lembretes */
+.reminders {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .reminders ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .reminders li {
+        font-size: 1.1em;
+        color: #666;
+        margin: 5px 0;
+    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .summary, .expense-chart, .recent-expenses, .reminders {
+        grid-column: span 1;
+    }
+}

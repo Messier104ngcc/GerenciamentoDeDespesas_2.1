@@ -1,0 +1,75 @@
+﻿@model Usuarios
+
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/formularioDespesas.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/PopUp.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
+}
+
+
+<div class="card-form">
+    <h2>Detalhes do Usuário</h2>
+
+    <div class="form-group">
+        <label>Nome:</label>
+        <span>@Model.Nome</span>
+    </div>
+
+    <div class="form-group">
+        <label>UserName:</label>
+        <span>@Model.UserName</span>
+    </div>
+
+    <div class="form-group">
+        <label>Email:</label>
+        <span>@Model.Email</span>
+    </div>
+
+    <div class="form-group">
+        <label>Perfil:</label>
+        <span>@Model.Perfil</span>
+    </div>
+
+    <div class="form-group">
+        <label>Data de Cadastro:</label>
+        <span>@Model.DataCadastro.ToString("dd/MM/yyyy")</span> <!-- Formatação de data -->
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="back">
+            <a class="link" asp-controller="Usuario" asp-action="Index"><i class="bi bi-back mx-2"></i>Voltar</a>
+        </button>
+
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">
+            <i class="bi bi-trash mx-2"></i>Excluir
+        </button>
+
+        <!-- Modal de confirmação de exclusão -->
+        <div class="modal fade" id="confirmDeleteModal" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja excluir este Usuário?
+                    </div>
+                    <div class="modal-footer">
+                        <form asp-controller="Usuario" asp-action="Excluir" method="post">
+                            <input type="hidden" name="id" value="@Model.UserId" />
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="bi bi-back mx-2"></i>Cancelar</button>
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash mx-2"></i>Excluir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

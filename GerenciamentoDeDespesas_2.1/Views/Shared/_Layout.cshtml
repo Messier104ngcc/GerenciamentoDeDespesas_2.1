@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gerenciamento De Despesas</title>
+    <link rel="icon" type="image/png" href="~/img/logoSistema.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/sidebars.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/formularios.css" asp-append-version="true" />
+    <link href="https://cdn.datatables.net/v/dt/dt-2.1.6/datatables.min.css" rel="stylesheet"> @* importando datatables para poder gerar os filtros  *@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> @*  importando icones para o projeto *@
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none" /> @* exportando a biblioteca de icones para mensagens de sucesso que aparecrá para o usuario apois ele fazer um alteração qualquer nos dados *@
+</head>
+<body>
+    <div class="row h-100 col-12">
+        <div class="col-12 col-sm-2">
+            <div class="d-flex flex-column flex-shrink-0 p-3 col-sm-12 bg-dark" style="width: 100%; height:100%">
+                <img src="/img/LOGO.png" class="rounded mx-auto d-block img-fluid" alt="Logo" style="width: 100%; height: 50%;">
+                <hr>
+                @await Component.InvokeAsync("Menu")
+            </div>
+        </div>
+        <div class="col-12 col-sm-9">   
+            <main class="Main ">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-2.1.6/datatables.min.js"></script>  @* importando datatables para poder gerar os filtros  *@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/DarckMod.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
